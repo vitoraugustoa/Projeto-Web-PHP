@@ -1,3 +1,7 @@
+<?php
+   session_start();
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -19,15 +23,14 @@
 
       </div>
 
-      <div class="row center">
-         <div class="alert alert-danger invisivel" role="alert">
-            Não digite letras!
-         </div>
-      </div>
       <div class="row border center  border-dark rounded">
 
          <div class="col-3 p-5">
             <form class="align-middle" method="post" action="calculo.php">
+            <div class="form-group">
+                  <label for="">Data</label>
+                  <input type="date" class="form-control" id="" name="data" placeholder="Data ">
+               </div>
                <div class="form-group">
                   <label for="">Cemig</label>
                   <input type="text" class="form-control" id="" name="cemig" placeholder="Valor Cemig">
@@ -66,25 +69,11 @@
                   </i></button>
             </form>
          </div>
-
-         <div class="row center">
-            <?php
-               if(isset($_GET['resultado'])){
-                  ?>
-                     <h1 class="display-4">Resultado: <?=$_GET['resultado']?></h1>
-                  <?php
-               }else{
-                  ?>
-                     <h1 class="display-4">Resultado:</h1> 
-                  <?php	
-               }
-            ?>
-               
-         </div>
       </div>
    </div>
 </body>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-   integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 </html>
