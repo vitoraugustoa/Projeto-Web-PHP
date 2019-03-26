@@ -15,6 +15,17 @@
 </head>
 <body>
 <div class="container my-5 ">
+
+<?php require_once("shared/header.php");
+
+
+if(isset($_SESSION['alerta'])){
+  echo $_SESSION['alerta'];
+  unset($_SESSION['alerta']);
+}
+
+?>
+
 <table class="table table-striped">
   <thead>
     <tr>
@@ -25,6 +36,8 @@
       <th scope="col">Outros</th>
       <th scope="col">Quantidade Moradores</th>
       <th scope="col">Data</th>
+      <th scope="col">Valor Total do condominio</th>
+      <th scope="col">Valor total das despesas</th>
     </tr>
   </thead>
   <tbody>
@@ -35,14 +48,16 @@
         while($linha=mysql_fetch_array($resultado))
         {
   ?>
-    <tr>
-      <th><?= $linha['cemig']?></th>
-      <td><?= $linha['copasa']?></td>
-      <td><?= $linha['limpeza']?></td>
-      <td><?= $linha['tarifa_bancaria']?></td>
-      <th><?= $linha['outros']?></th>
-      <td><?= $linha['qnt_moradores']?></td>
+    <tr class="linha">
+      <td id="cemig" ><?= $linha['cemig']?></td>
+      <td id="copasa" ><?= $linha['copasa']?></td>
+      <td id="limpeza" ><?= $linha['limpeza']?></td>
+      <td id="tarifaBancaria" ><?= $linha['tarifa_bancaria']?></td>
+      <td id="outros" ><?= $linha['outros']?></td>
+      <td id="divide" ><?= $linha['qnt_moradores']?></td>
       <td><?= $linha['data_cadastro']?></td>
+      <td id="result-condominio"></td>
+      <td id="result-despesas"></td>
     </tr>
     <?php
     }
@@ -57,8 +72,8 @@
 </table>
 </div>
 </body>
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+<?php require_once("shared/footer.php"); ?>
+<script src="javascript/calculos.js"></script>
 
 </html>

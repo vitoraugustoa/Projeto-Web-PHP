@@ -39,14 +39,14 @@ if(cadastrar($cemig,$copasa,$limpeza,$tarifa,$outros,$quantidadeMoradores,$data)
     $_SESSION['alerta'] = '<div class="alert alert-success" role="alert">
     Eba! Cadastrado com sucesso!
   </div>';
-    header("Location: resultado.php");
+    header("Location: listar.php");
 }
 else
 {
     $_SESSION['alerta'] = '<div class="alert alert-danger" role="alert">
     Ops! Não conseguimos cadastrar!
   </div>';
-    header("Location: resultado.php");
+    header("Location: listar.php");
 }
 
 
