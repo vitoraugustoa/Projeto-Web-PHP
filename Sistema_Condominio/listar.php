@@ -1,6 +1,7 @@
 <?php
     session_start();
     require_once("lib/funcoes.php");
+    date_default_timezone_set("America/Sao_Paulo");
 ?>
 
 <!DOCTYPE html>
@@ -55,14 +56,13 @@ if(isset($_SESSION['alerta'])){
       <td id="tarifaBancaria" ><?= $linha['tarifa_bancaria']?></td>
       <td id="outros" ><?= $linha['outros']?></td>
       <td id="divide" ><?= $linha['qnt_moradores']?></td>
-      <td><?= $linha['data_cadastro']?></td>
+      <td><?=date('d-m-Y', strtotime($linha['data_cadastro']))?></td>
       <td id="result-condominio"></td>
       <td id="result-despesas"></td>
     </tr>
     <?php
     }
 }
-
   ?>
 
 <li class="nav-item">
