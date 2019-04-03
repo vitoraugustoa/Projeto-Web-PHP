@@ -29,7 +29,7 @@
               <a class="nav-link active" href="Index.php">Inicio</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="listar.php">Resultados</a>
+              <a class="nav-link" href="fila.php">Fila</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="estatisticas.php">Estatiscas</a>
