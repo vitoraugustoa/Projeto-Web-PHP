@@ -32,7 +32,7 @@
               <a class="nav-link" href="fila.php">Fila</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="estatisticas.php">Estatiscas</a>
+              <a class="nav-link" href="atendimento.php">Atendimento</a>
             </li>
           </ul>
         </div>
